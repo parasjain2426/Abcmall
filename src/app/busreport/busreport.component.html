@@ -1,0 +1,37 @@
+<head>
+    <base href="/busreport/:Username">
+</head>
+<div style="background-image: url('/assets/report.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    height: 130%;
+    width: 100%;">
+ <div style="margin-top: 100px;">   
+ <div class="scrolld" style="margin-left: 10%;margin-top: 10%;">
+<div>
+    <table class="scrolldown">
+        <thead>
+            <tr>
+            <th>BusinessSpaceType</th>
+            <th>Duration</th>
+            <th>RentType</th>
+            <th>Cost</th>
+            <th>Available</th>
+            <th>Refresh</th>
+        </tr>
+        </thead>
+        <tbody style="text-align: center;" *ngFor="let shop of allShops">
+            <tr>
+                <td>{{shop.businessSpaceType}}</td>
+                <td>{{shop.duration}}</td>
+                <td>{{shop.rentType}}</td>
+                <td>{{shop.cost}}</td>
+                <td>{{shop.available}}</td>
+                <input type="radio" name="ShopName"  (click)=refresh(shop.businessSpaceType) style="padding: 10px;margin-top: 25px;">
+            </tr> 
+        </tbody>
+    </table>
+</div>
+</div>
+</div>

@@ -1,0 +1,36 @@
+.form{
+    background-image:url('/assets/bookspace.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    position: absolute;
+    height: 800px;
+    padding: 15px;
+    /* margin-top: 2px; */
+    width: 100%;
+}
+.warnmessage{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: small;
+    margin-left: 25%;
+    float: left;
+    padding: 5px;
+}
+.container{
+    display: inline-block;
+    margin-left: 350px;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.container input{
+    float: left;
+}
+
+.container label{
+    float: left;
+    padding: 5px;
+    width: 200px;
+}

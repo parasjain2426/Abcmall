@@ -1,0 +1,14 @@
+th,td{
+    padding: 20px;
+}
+
+table.scrolldown{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.scrolld{
+    overflow: scroll;
+    height: 400px;
+    width: 80%;
+}

@@ -1,0 +1,70 @@
+.form{
+    background-image: url('/assets/upcur01.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 125%;
+    width: 100%;
+}
+
+.container{
+    display: inline-block;
+    margin-left: 450px;
+    margin-top: 210px;
+    padding: 10px;
+}
+
+.container input{
+    float: left;
+}
+
+.container label{
+    float: left;
+    padding: 5px;
+    width: 200px;
+}
+
+
+.datewarn{
+    color: red;
+    margin-top: 100px;
+    text-align: center;
+    font-size: small;
+    margin-left: 200px;
+    padding: 2px;
+    height: 30px;
+    width: fit-content;
+}
+
+.warnmessage{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: small;
+    margin-left: 12%;
+    float: left;
+    padding: 5px;
+}
+
+#control_wrapper {
+    max-width: 246px;
+    margin-top: 80px;
+    float: left;
+    position: absolute;
+}
+.control-section {
+    margin-left: 100px;
+    margin-top: 20px;
+    padding: 2px;
+}
+.nextdate{
+    width: 80%;
+    height: 30px;
+    background-color: #98fb98;
+    color: #228b22;
+    text-align: center;
+    display: none;
+    padding: 5px;
+    margin-left: 10%;
+    position: fixed;
+}

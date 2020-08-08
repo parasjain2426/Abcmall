@@ -1,0 +1,40 @@
+<head>
+    <base href="/upcurspace/:BusinessSpace">
+    <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" />
+</head>
+<div class="form">
+    <p id="nAvail" class="nextdate">{{BusinessSpace}} next Available on {{nextDate}}</p>
+<div>
+    <form class="container" #userForm="ngForm" (ngSubmit)="submitForm(userForm.value)">
+        <label style="margin-top: 10px;">Username</label>
+        <input type="text" placeholder="Username" style="margin-top: 10px;" name="Username" ngModel><br />
+        <label style="margin-top: 20px;">Password</label>
+        <input type="password" placeholder="Password" style="margin-top: 20px;" name="password" ngModel><br />
+        <label style="margin-top: 20px;">SqFt</label>
+        <input type="number" placeholder="Sqft(If Applicable)" style="margin-top: 20px;" [disabled]="isdisabled" name="Sqft" #sqft ngModel><br />
+        <!-- <label style="margin-top: 15px;color: #0c8772;">Book From</label> -->
+        <div class="control-section">
+            <div id="control_wrapper">
+            <ejs-datetimepicker placeholder='Book From' name="BookFrom" #df ngModel></ejs-datetimepicker>
+            </div>
+            </div><br />
+        <!-- <label style="margin-top: 15px;color: #0c8772;">Book Upto</label> -->
+        <div class="control-section">
+            <div id="control_wrapper">
+            <ejs-datetimepicker placeholder='Book To' name="BookTo" #dt ngModel></ejs-datetimepicker>
+            </div>
+            </div><br />   
+        <section class="datewarn">{{dateWarn}}</section>
+        <input type="submit" style="margin-left: 150px;width: 150px;margin-top:10px;padding: 5px;color:#0c8772;" value="submit">
+        <section class="warnmessage">{{warnMessage}}</section>
+    </form> 
+</div>
+<div style="margin-left: 47%;">
+    <button (click)=chckprice(df.value,dt.value,sqft.value) style="padding: 5px;color:#0c8772;">Check Price</button>
+</div>
+</div>

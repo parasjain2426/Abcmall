@@ -1,0 +1,28 @@
+<head>
+    <base href="/login/mdashboard/:Username">
+</head>
+<div style="background-image: url('/assets/mdashboard02.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 130%;
+    width: 100%;">
+<div class="bd"><font style="margin-right: 30px;font-weight: bold;">Hey! {{Username}}</font>
+    <button [routerLink]="['/comReport',Username]" class="so">Complaints</button> 
+    <button [routerLink]="['/revReport',Username]" class="so">Revenue Report</button>
+    <button (click)=signout() class="so">SignOut</button>
+</div>
+<div>
+    <div style="height: 300px;width: 400px;position: absolute;margin-left: 700px;margin-top: 100px;">
+        <img src="/assets/quote.jpeg" style="height: 100%;width: 100%;">
+        </div>
+<div style="margin-top: 25px;">
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Firstname}} {{Lastname}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Contactno}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{email}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Address}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Usertype}}</font></div>
+<div style="padding: 20px;"><a [routerLink]="['/busreport',Username]" style="text-decoration: none;margin-left: 30px;">BusinessSpaces</a></div>
+</div>
+</div>
+</div>

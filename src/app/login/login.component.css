@@ -1,0 +1,40 @@
+.username{
+    padding: 10px;
+    margin-left: 75%;
+    margin-top: 15%;
+}
+.pswrd{
+    padding: 10px;
+    margin-left: 75%;
+    margin-top: 2%;
+}
+.pad{
+    padding: 10px;
+    margin-left: 87%;
+    margin-top: 2%;
+}
+.frps{
+    margin-left: 85%;
+    margin-top: 2%;
+   height: 20px;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    color: #311b92;
+    font-weight: bold;
+}
+.frps a:hover{
+    color:#7c4dff;
+}
+.container{
+        background-image:url('/assets/login.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        position: absolute;
+        margin-left: 150px;
+        margin-top: 5px;
+        height: 550px;
+        width:800px;
+        padding: 150px;
+}

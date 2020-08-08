@@ -1,0 +1,34 @@
+<head>
+    <base href="/revReport/:Username">
+</head>
+<div style="background-image: url('/assets/report.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    height: 130%;
+    width: 100%;">
+<div style="margin-left: 30%;margin-top: 10%;">
+<form #revReport="ngForm" (ngSubmit)="inpDates(revReport.value)" style="float: right;">
+    <input type="date" name="DateFrom" placeholder="DateFrom" ngModel style="padding: 10px;margin: 10px;">
+    <input type="date" name="DateTo" placeholder="DateTo" ngModel style="padding: 10px;margin: 10px;">
+    <input type="submit" value="submit" style="padding: 10px;margin: 10px;">
+</form>
+<div class="scrolld" style="margin-left: 10%;margin-top: 2%;">
+<div id="showrevenue" style="display: none;">
+    <table>
+        <thead>
+            <th>From</th>
+            <th>To</th>
+            <th>Revenue Collected</th>
+        </thead>
+        <tbody style="padding: 50px;text-align: center;" *ngFor="let disp of revdisp">
+            <td>{{disp.bfrom | date:'short'}}</td>
+            <td>{{disp.bto | date:'short'}}</td>
+            <td>{{disp.revenue | currency:'INR'}}</td>
+        </tbody>
+    </table>
+  <font style="margin-left: 35%;margin-top: 10px;">Total Revenue Collected : {{tsum | currency:'INR'}}</font>
+</div>
+</div>
+</div>
+</div>

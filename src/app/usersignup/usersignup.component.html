@@ -1,0 +1,62 @@
+<head>
+    <base href="/SignUp/:businessSpace">
+    <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" />
+</head>
+<header class="form">
+    <p id="nAvail" class="nextdate">{{BusinessSpace}} next Available on {{nextDate}}</p>
+    <div style="float:right;margin-right: 30px;margin-top: 30px;">
+        <button (click)=alreadysigned() style="padding: 10px;padding: 5px;color:#0c8772;">Existing User?</button>
+    </div>
+    <div class="scrolld">
+        <div class="checkav">
+            <div class="control-section">
+                <div id="control_wrapper">
+                <ejs-datetimepicker placeholder='Book From' name="BookFrom" #df></ejs-datetimepicker>
+                </div>
+                </div><br />
+            <div class="control-section">
+                <div id="control_wrapper">
+                <ejs-datetimepicker placeholder='Book To' name="BookTo" #dt></ejs-datetimepicker>
+                </div>
+                </div><br />   
+            <section class="datewarn">{{dateWarn}}</section>
+            <div style="margin-left: 45%;padding-top: 10px;">
+            <button (click)=chckAvail(df.value,dt.value) style="padding: 2px;padding: 5px;color:#0c8772;">Check Availability</button>
+        </div>
+        </div>
+    <form class="container" #userForm="ngForm" (ngSubmit)="submitForm(userForm.value,df.value,dt.value)">
+    <label style="margin-top: 10px;">FirstName</label>
+    <input type="text" placeholder="FirstName" style="margin-top: 10px;" name="FirstName" ngModel><br />
+    <label style="margin-top: 20px;">LastName</label>
+    <input type="text" placeholder="LastName" style="margin-top: 20px;" name="LastName" ngModel><br />
+    <label style="margin-top: 20px;">UserName</label>
+    <input type="text" placeholder="UserName" style="margin-top: 20px;" name="UserName" ngModel><br />
+    <label style="margin-top: 20px;">Password</label>
+    <input type="password" placeholder="Password" style="margin-top: 20px;" name="Password" ngModel><br />
+    <label style="margin-top: 20px;">Address</label>
+    <input type="text" placeholder="Address" style="margin-top: 20px;" name="Address" ngModel><br />
+    <label style="margin-top: 20px;">PinCode</label>
+    <input type="number" placeholder="PinCode" style="margin-top: 20px;" name="PinCode" ngModel><br />
+    <label style="margin-top: 20px;">ContactNo</label>
+    <input type="number" placeholder="ContactNo" style="margin-top: 20px;" name="ContactNo" ngModel><br />
+    <label style="margin-top: 20px;">Email</label>
+    <input type="email" placeholder="Email" style="margin-top: 20px;" name="Email" ngModel><br />
+    <label style="margin-top: 15px;">BusinessSpace</label>
+    <p style="margin-top: 20px;float: left;">{{BusinessSpace}}</p><br />
+    <label style="margin-top: 15px;">SqFt</label>
+    <input type="number" placeholder="Sqft(If Applicable)" style="margin-top: 15px;" [disabled]="isdisabled" name="Sqft" #sqft ngModel><br />
+    <label style="margin-top: 15px;">User Type</label>
+    <p style="margin-top: 20px;float: left;">Business Owner</p><br />
+    <input type="submit" style="margin-left: 120px;margin-top: 10px;width: 150px;padding: 2px;padding: 5px;color:#0c8772;" value="submit">
+    <section class="warnmessage">{{warnMessage}}</section>
+    </form> 
+    <div style="margin-left: 56%;">
+        <button (click)=chckprice(df.value,dt.value,sqft.value) style="padding: 2px;padding: 5px;color:#0c8772;">Check Price</button>
+    </div>
+</div>
+</header>

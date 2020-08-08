@@ -1,0 +1,37 @@
+.bd{
+    color: navy;
+    text-align: end;
+    margin-left: 100px;
+    position: relative;
+    right: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.bd button{
+    text-decoration: none; 
+    color: navy;
+    padding-left: 10px;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    height: 40px;
+}
+
+.bd button:hover{
+    text-decoration: overline 3px;
+    box-shadow:0 4px 8px 0 gray;
+}
+
+a{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+a:hover{
+    color: navy;
+}

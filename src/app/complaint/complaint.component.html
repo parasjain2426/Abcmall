@@ -1,0 +1,24 @@
+<head>
+    <base href="/requestServices/:Username">
+</head>
+
+<header class="form">
+    <p style="text-align: center;font-weight: bold;margin-top: 200px;">Register Your Complaint</p>
+    <p style="text-align: center;margin-top: 50px;">Hey! {{Username}} We are Listening!..</p>
+    <form class="container" #userForm="ngForm" (ngSubmit)="submitForm(userForm.value)">
+        <label for="ComType">Complaint Type</label>
+        <select name="ComType" id="ComType" ngModel>
+        <option value="Carpentry">Carpentry</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Security">Security</option>
+        <option value="Masonry">Masonry</option>
+        </select>
+        <br><br>
+        <label for="Description">Description</label>
+        <textarea id="Description" name="Description" rows="4" cols="50" ngModel>Please Provide the description of the problem.</textarea>
+        <br><br>
+        <input type="submit" style="margin-left: 200px;margin-top: 10px;width: 150px;" value="submit">
+        <section class="warnmessage">{{warnMessage}}</section>
+    </form> 
+    </header>

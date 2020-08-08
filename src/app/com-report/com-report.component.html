@@ -1,0 +1,34 @@
+<head>
+    <base href="/comReport/:Username">
+</head>
+<div style="background-image: url('/assets/report.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    height: 130%;
+    width: 100%;">
+<div class="scrolld" style="margin-left: 10%;margin-top: 10%;">  
+<div>
+    <table style="margin: 30px;margin-left: 30%;">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>probdate</th>
+            <th>probType</th>
+            <th>probDesc</th>
+            <th>probUsername</th>
+        </tr>
+        </thead>
+        <tbody style="padding: 50px;text-align: center;" *ngFor="let report of reports">
+            <tr>
+                <td>{{report.id}}</td>
+                <td>{{report.probdate | date:'short'}}</td>
+                <td>{{report.probType}}</td>
+                <td>{{report.probDesc}}</td>
+                <td>{{report.probUsername}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>  
+</div>

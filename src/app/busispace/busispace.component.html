@@ -1,0 +1,23 @@
+<head>
+    <base href="/businessSpace">
+</head>
+<h1 style="text-align: center;color: #0c8772;padding: 5px;text-decoration: overline 5px;">Business Spaces</h1>
+<div *ngFor="let shop of shops">
+    <div [ngStyle]="{'background-image': 'url(/assets/' + shop.businessSpaceType + '.png' + ')', width:'80%',height:'500px'}" 
+    style="background-repeat: no-repeat;
+           background-position: left;
+           background-size:contain;
+           position: relative;
+           left: 0;border: 3px solid white;">
+    <p style="margin-left: 60%;margin-top: 10%;font-weight: bolder;font-size: large;"><font style="font-weight: normal;font-size: medium;">Duration : </font> {{shop.duration}}</p>
+    <p style="margin-left: 60%;margin-top: 5%;font-weight: bold;font-size: large;"><font style="font-weight: normal;font-size: medium;">Rent Type : </font>{{shop.rentType}}</p>
+    <p style="margin-left: 60%;margin-top: 5%;font-weight: bold;font-size: large;"><font style="font-weight: normal;font-size: medium;">Cost : </font>{{shop.cost | currency:'INR'}}</p>
+<label class="container">
+    <input type="radio" name="ShopName" id="busbox" (click)=show(shop.businessSpaceType)>
+    <span class="checkmark"></span>
+  </label>
+</div>
+<div style="height: 100px;">
+
+</div>
+</div>

@@ -1,0 +1,19 @@
+<head>
+    <base href="/login">
+</head>
+<div style="background-color: #dbf3fa;height:900px;width: 100%;">
+<div class="container">
+<div class="username">
+    <input type="text" #UserId placeholder="UserName" style="padding: 5px;">
+</div>
+<div class="pswrd">
+    <input type="password" #Password placeholder="Password" style="padding: 5px;">
+</div>
+<div class="pad">
+    <button (click)=getCredentials(UserId.value,Password.value) style="padding: 5px;color:blue;">Login</button>
+</div>
+<div class="frps">
+   <a routerLink="/fgtpswrd"> Forget Password ?</a>
+</div>
+</div>
+</div>

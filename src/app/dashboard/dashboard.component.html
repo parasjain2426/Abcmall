@@ -1,0 +1,53 @@
+<head>
+    <base href="/login/dashboard/:Username">
+    <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-lists/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" />
+</head>
+<div style="background-image: url('/assets/dashboard02.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 140%;
+    width: 100%;">
+   <p id="nAvail" class="nextdate">{{BusinessSpace}} next Available on {{nextDate}}</p> 
+<div class="bd"><font style="font-weight: bold;margin-right: 20px;">Hey! {{Username}}</font>
+    <button (click)=reqSer() class="so">Services</button> 
+    <button (click)=signout() class="so">SignOut</button>
+</div>
+<div>
+    <div style="height: 300px;width: 400px;position: absolute;margin-left: 600px;margin-top: 70px;">
+    <img src="/assets/Shop_SWE_dash.png" style="height: 140%;width: 150%;">
+    </div>
+<div style="margin-top: 10px;">
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Firstname}} {{Lastname}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Contactno}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{email}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Address}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{Usertype}}</font></div>
+<div style="padding: 20px;"><font style="margin-left: 30px;color: white;font-weight: bold;">{{BusinessSpace}}</font></div>
+<div style="padding: 20px;"><font style="margin-left:30px;color: white;font-weight: bold;">{{dfrom | date:'short'}}</font></div>
+<div style="padding: 20px;"><font style="margin-left:30px;color: white;font-weight: bold;">{{dto | date:'short'}}</font></div>
+<div style="padding: 20px;"><button (click)=exdate()><font style="margin-left:30px;color: #0c8772;font-weight: bold;">Extend Dates</font></button></div>
+<div style="display: none;margin-left: 30px;" id="showdate">
+    <form class="container" #userForm="ngForm" (ngSubmit)="submitForm(userForm.value)">
+        <div class="control-section">
+        <div id="control_wrapper">
+        <ejs-datetimepicker placeholder='Select a date' name="BookFrom" ngModel></ejs-datetimepicker>
+        </div>
+        </div> 
+        <div class="control-section">
+        <div id="control_wrapper">
+        <ejs-datetimepicker placeholder='Select a date' name="BookTo" ngModel></ejs-datetimepicker>
+        </div>
+        </div> 
+    <section class="datewarn">{{dateWarn}}</section>
+    <input type="submit" value="submit" style="margin-left: 30%;color: #0c8772;">
+    </form>
+</div>
+</div>
+</div>
+</div>

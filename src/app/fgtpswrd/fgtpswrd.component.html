@@ -1,0 +1,28 @@
+<head>
+    <base href="/fgtpswrd">
+</head>
+<div style="background-image: url('/assets/cp.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: fixed;
+height: 65%;
+width: 50%;
+margin-left: 20%;
+margin-top: 5%;">
+<div style="margin-top: 12%;margin-left: 40%;">
+    <div>
+        <!-- <label for="UserId" class="loginBox">USERNAME</label> -->
+        <input type="text" #UserId placeholder="UserName">
+    </div>
+    <div>
+        <!-- <label for="Password" class="loginBox">PASSWORD</label> -->
+        <input type="password" #NewPassword placeholder="New Password">
+    </div>
+    <div >
+        <input type="password" #RetypePassword placeholder="Retype-Password">
+    </div>
+    <div style="margin-left: 25%;margin-top: 10px;">
+        <button (click)=updateCredentials(UserId.value,NewPassword.value,RetypePassword.value) style="padding:10px;">Submit</button>
+    </div>
+</div>
+</div>

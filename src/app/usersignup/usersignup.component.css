@@ -1,0 +1,81 @@
+.form{
+    background-image: url('/assets/form1.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 135%;
+    width: 100%;
+}
+
+.checkav{
+        display: inline-block;
+        margin-left: 450px;
+        margin-top: 5px;
+        padding: 10px;
+}
+
+.container{
+    display: inline-block;
+    margin-left: 450px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.container input{
+    float: left;
+}
+
+.container label{
+    float: left;
+    padding: 5px;
+    width: 200px;
+}
+
+.datewarn{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: small;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.warnmessage{
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+    font-size: small;
+    margin-left: 25%;
+    float: left;
+    padding: 5px;
+}
+
+#control_wrapper {
+    max-width: 246px;
+    margin-top: 10px;
+    float: left;
+}
+.control-section {
+    margin-left: 100px;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+.scrolld{
+    overflow: scroll;
+    height: 550px;
+    width: 80%;
+    margin-top: 16%;
+}
+
+.nextdate{
+    width: 80%;
+    height: 30px;
+    background-color: #98fb98;
+    color: #228b22;
+    text-align: center;
+    display: none;
+    padding: 5px;
+    margin-left: 10%;
+    position: fixed;
+}
