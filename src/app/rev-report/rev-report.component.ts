@@ -27,22 +27,13 @@ export class RevReportComponent implements OnInit {
     this.abcservice.getRevenue()
     .subscribe(response=>{
       this.revres = response;
-      for(this.i=0;this.i<this.revres.length;this.i++){
-            var df = new Date(this.revres[this.i].bfrom);
-            var dt = new Date(this.revres[this.i].bto);
-            if((df>=this.dateFrom && dt<=this.dateTo)){
-                  this.revint.bfrom = this.revres[this.i].bfrom;
-                  this.revint.bto = this.revres[this.i].bto;
-                  this.revint.revenue = this.revres[this.i].revenue;
-                  this.revdisp.push(this.revint);
-                  this.tsum+=parseInt(this.revres[this.i].revenue);
-            }
-            this.revint = {} as revenue;
-      }
-        // console.log(this.revdisp);
+       this.abcservice.getRevenue(this.dateFrom.toISOString(),this.dateTo.toISOString())
+        .subscribe(response=>{
+                this.revres = response;
     },
-    error=>{alert("Error getting the Revenue Report\nPlease Try Again Later..!")})
-  }
+    error=>{alert("Error getting the Revenue Report\nPlease Try Again Later..!")});
+    this.abcservice.totRevenue(this.dateFrom.toISOString(),this.dateTo.toISOString()).subscribe(response=>this.tsum=response);
+    }
 
   constructor(private abcservice:GetAbcService,private router:Router,private route:ActivatedRoute) { }
 
