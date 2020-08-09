@@ -90,8 +90,18 @@ export class GetAbcService {
         'Content-Type' : 'application/json'}),params:params})
   }
 
-  getRevenue():Observable<revenue[]>{
-    return this.http.get<revenue[]>(this.baseUrl+"getRevenue",{'headers':this.httpHeader})
+  getRevenue(Bfrom:string,Bto:string):Observable<revenue[]>{
+    const params = new HttpParams()
+    .set('Bfrom',Bfrom)
+    .set('Bto',Bto);
+    return this.http.get<revenue[]>(this.baseUrl+"getRevenue",{'params':params,'headers':this.httpHeader})
+  }
+
+  totRevenue(Bfrom:string,Bto:string):Observable<any>{
+    const params = new HttpParams()
+    .set('Bfrom',Bfrom)
+    .set('Bto',Bto);
+    return this.http.get<any>(this.baseUrl+"totRevenue",{'params':params,'headers':this.httpHeader})
   }
 
   addReq(Comdate:string,ComType:string,Desc:string,Username:string):Observable<Respmessage>{
@@ -168,12 +178,4 @@ export class GetAbcService {
       headers: new HttpHeaders({'Authorization':'Basic ' + window.btoa(this.username + ':' + this.password),
       'Content-Type' : 'application/json'}),params:params})
   }
-
-  // hello():Observable<Respmessage>{
-  //   const params = new HttpParams()
-  //   .set('hell',"Sir");
-  //     return this.http.post<Respmessage>(this.baseUrl+"hello",{},{
-  //       headers: new HttpHeaders({'Authorization':'Basic ' + window.btoa(this.username + ':' + this.password),
-  //       'Content-Type' : 'application/json'}),params:params})
-  // }
 }
