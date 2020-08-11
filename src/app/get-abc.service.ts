@@ -120,6 +120,14 @@ export class GetAbcService {
     const  httpOptions = this.takeHeader()
     return this.http.get<complaints[]>(this.baseUrl+"getReq",httpOptions)
   }
+  
+  addAuth(Username:string):Observable<Respmessage>{
+    const params = new HttpParams()
+    .set('authName',Username);
+    return this.http.post<Respmessage>("saveAuth",{},{
+      headers: new HttpHeaders({'Authorization':'Basic ' + window.btoa(this.username + ':' + this.password),
+      'Content-Type' : 'application/json'}),params:params})
+  }
 
   updateAuth(Username:string,auth:string):Observable<Respmessage>{ //mark for change
       const params = new HttpParams()
