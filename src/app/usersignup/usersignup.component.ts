@@ -41,7 +41,6 @@ export class UsersignupComponent implements OnInit {
     this.dateWarn = "";
     this.abcservice.chckavail(this.Bfrom.toISOString(),this.Bto.toISOString(),this.BusinessSpace)
     .subscribe(data=>{this.respAvail = data;
-      // console.log(data);
       if(this.respAvail.length==0){
         alert("The Space is All Yours\nYou are Good to Go....");
         document.getElementById('nAvail').style.display = 'none'; 
@@ -109,14 +108,12 @@ export class UsersignupComponent implements OnInit {
                            },error=>{alert("Error Contacting to the Server\nPlease try again...!")});
          
                      this.abcservice.saveUser(data,this.BusinessSpace,this.Bfrom.toISOString(),this.Bto.toISOString())
-                         .subscribe(response=>{this.message=response
+                         .subscribe(response=>{this.message=response;
                                  alert(this.message.message);
-                                     },error=>{alert("Error! Saving the User-Details.")});
-                                   
-                     this.abcservice.addAuth(data.UserName.toString()).subscribe(data=>{
-                           this.auth=data;
-                                 },error=>{alert("Error Creating Authorization Token")});
-                     this.router.navigate(['/']);            
+                                 if(this.message.message=="Saved Successfully"){
+                                   this.router.navigate(['/']);
+                                 }
+                                     },error=>{alert("Error! Saving the User-Details.")});            
            }
            else{
              alert(this.bookAlert);                                    
