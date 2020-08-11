@@ -20,6 +20,7 @@ export class UsersignupComponent implements OnInit {
   private shop=[];
   private respAvail = [];
   private message:Respmessage;
+  private auth:Respmessage;
   private usr:Respmessage;
   isdisabled = true;
   BusinessSpace="";
@@ -91,9 +92,10 @@ export class UsersignupComponent implements OnInit {
       this.abcservice.checkUser(data.UserName.toString(),data.Password.toString()).subscribe(response=>{
         this.usr = response;
         if(this.usr.message=="No"){
-         //yes
-         this.abcservice.chckavail(this.Bfrom.toISOString(),this.Bto.toISOString(),this.BusinessSpace)
-         .subscribe(response=>{this.respAvail = response;
+         //yesdata.UserName
+.subscribe(response=>{});       
+          this.abcservice.chckavail(this.Bfrom.toISOString(),this.Bto.toISOString(),this.BusinessSpace)
+         .subscnse=>{this.respAvail = response;
            if(this.respAvail.length==0){
              this.dateWarn = '';
              this.warnMessage = '';
@@ -105,7 +107,9 @@ export class UsersignupComponent implements OnInit {
                        .subscribe(data=>{
                          this.message = data;})
                            },error=>{alert("Error Contacting to the Server\nPlease try again...!")});
-         
+             
+                     this.abcservice.addAuth(data.UserName).subscribe(response=>{this.auth=response},error=>{alert("Error Generating AuthToken")});
+             
                      this.abcservice.saveUser(data,this.BusinessSpace,this.Bfrom.toISOString(),this.Bto.toISOString())
                          .subscribe(response=>{this.message=response;
                                  alert(this.message.message);
@@ -144,7 +148,6 @@ export class UsersignupComponent implements OnInit {
     this.abcservice.getShop(this.BusinessSpace)
     .subscribe(response=>{this.shop = response;
     this.revenue = this.compute.totalCost(this.shop,dt,df,sqft);
-    // this.detailcost = datetimeDiff.toString()+'(Hrs/Days/SqFt)'+'*'+this.shop[0][2]+'(SpaceCost)';
       alert("Total Cost\n"+''+"\nPayable Rs."+this.revenue);
     },error=>{alert("Error Fetching the Price")});
   }
