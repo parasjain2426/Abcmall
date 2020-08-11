@@ -20,7 +20,6 @@ export class UsersignupComponent implements OnInit {
   private shop=[];
   private respAvail = [];
   private message:Respmessage;
-  private auth:Respmessage;
   private usr:Respmessage;
   isdisabled = true;
   BusinessSpace="";
